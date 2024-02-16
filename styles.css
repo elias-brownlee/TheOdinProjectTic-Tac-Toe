@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global styles */
+body {
+    height: 100%;
+    font-family: 'Lato', sans-serif;
+}
+
+header {
+    margin: 50px auto;
+    text-align: center;
+}
+
+h1 {
+    margin: 0 auto;
+    font-size: 38px;
+}
+
+/* Player info */
+.player-info {
+    width: 80%;
+    margin: 60px auto;
+    position: relative;
+}
+
+h2 {
+    display: inline-block;
+    font-size: 28px;
+}
+
+.computer {
+    position: absolute;
+    left: 70%;
+}
+
+/* Game board */
+.grid-container {
+    display: grid;
+    margin: 0 auto;
+    width: 455px;
+    height: auto;
+    grid-template-columns: repeat(3, 150px);
+    grid-template-rows: repeat(3, 150px);
+    grid-gap: 3px;
+    background-color: #606060;
+}
+
+.grid-container > button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: white;
+    font-size: 80px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.grid-container > button:hover {
+    background-color: #E0E0E0;
+}
+
+span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+}
+
+#player {
+    color: #3DBBFE;
+}
+
+#computer {
+    color: #F49CC8;
+}
+
+/* Modal styles */
+.modal-bg {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(211, 211, 211, 0.8);
+}
+
+.modal-content {
+    background-color: #9CF4A7;
+    margin: 40% auto;
+    width: 45%;
+    height: 40%;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px #888888;
+    position: relative;
+}
+
+.modal-content > h1 {
+    position: absolute;
+    bottom: 50%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 20%;
+    color: white;
+    font-size: 36px;
+}
+
+#restart {
+    display: block;
+    width: 70%;
+    height: 50px;
+    font-size: 20px;
+    outline: none;
+    border: 3px solid white;
+    border-radius: 25px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    background-color: #9CF4A7;
+    color: #808080;
+    font-weight: bold;
+    font-size: 24px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+#restart:hover {
+    animation: restart-animation 1s ease-in forwards;
+}
+
+@keyframes restart-animation {
+    50% {
+        width: 85%;
+    }
+}
+
+/* Media queries */
+@media screen and (min-width: 750px) {
+    .player-info {
+        width: 58%;
+    }
+
+    h1 {
+        letter-spacing: 1px;
+        font-size: 42px;
+    }
+
+    .player {
+        padding-left: 10px;
+    }
+
+    .modal-content {
+        width: 35%;
+        height: 40%;
+        margin-top: 28%;
+    }
+
+    #restart:hover {
+        animation-name: restart-responsive;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .player-info {
+        width: 40%;
+    }
+
+    .modal-content {
+        width: 28%;
+        margin-top: 21%;
+    }
+
+    #restart:hover {
+        animation-name: restart-responsive;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .player {
+        padding-left: 35px;
+    }
+
+    .player-info {
+        width: 35%;
+    }
+
+    .modal-content {
+        width: 22%;
+        height: 40%;
+        margin-top: 17%;
+    }
+
+    #restart:hover {
+        animation-name: restart-responsive;
+    }
+}
